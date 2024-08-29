@@ -19,4 +19,5 @@ from django.urls import path,include
 
 urlpatterns = [
     path('',include('userCon.urls')),
+    path('friend/',include('manageFrnds.urls')),
 ]

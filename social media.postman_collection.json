@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "8536a645-64cd-4d50-ba3e-b42064873475",
+		"name": "social media",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23447090"
+	},
+	"item": [
+		{
+			"name": "manage frnds",
+			"item": [
+				{
+					"name": "list of frnds",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 23201a64ae78c1001ae2f2ca240dfdc201a6691c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}friend/list/",
+							"host": [
+								"{{baseurl}}friend"
+							],
+							"path": [
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "friend request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"to_user\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}friend/request/",
+							"host": [
+								"{{baseurl}}friend"
+							],
+							"path": [
+								"request",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 23201a64ae78c1001ae2f2ca240dfdc201a6691c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"accepted\"  // or \"rejected\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}friend/request/1/",
+							"host": [
+								"{{baseurl}}friend"
+							],
+							"path": [
+								"request",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pending request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 23201a64ae78c1001ae2f2ca240dfdc201a6691c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}friend/pending/",
+							"host": [
+								"{{baseurl}}friend"
+							],
+							"path": [
+								"pending",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}signup/",
+					"host": [
+						"{{baseurl}}signup"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}signin/",
+					"host": [
+						"{{baseurl}}signin"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "1badddc9abaff672ab86b83d7375a9c9cfaa4766",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseurl}}logout/",
+					"host": [
+						"{{baseurl}}logout"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

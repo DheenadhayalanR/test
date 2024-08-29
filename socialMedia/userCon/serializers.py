@@ -12,12 +12,15 @@ class UserSignupSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['email', 'password']
+        fields = ['first_name','last_name','email', 'password']
 
     def create(self, validated_data):
+        firstname=validated_data["first_name"]
+        lastname=validated_data["last_name"]
         email = validated_data['email'].lower()
         password = validated_data['password']
-        user = User(email=email, username=email)
+        username = f"{firstname}{lastname}"
+        user = User(email=email,last_name=lastname,first_name=firstname ,username=username)
         user.set_password(password)
         user.save()
         return user
@@ -41,3 +44,8 @@ class UserLoginSerializer(serializers.Serializer):
 
         data['user'] = user
         return data
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email']
